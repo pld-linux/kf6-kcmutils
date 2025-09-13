@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.17
+%define		kdeframever	6.18
 %define		qtver		5.15.2
 %define		kfname		kcmutils
 
 Summary:	Utilities for KDE System Settings modules
 Name:		kf6-%{kfname}
-Version:	6.17.0
+Version:	6.18.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	75a1a1af5647ef5ae2a4800bd5d0436e
+# Source0-md5:	a191cd8bf0733c7c3e91568461950d29
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
@@ -49,6 +49,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	kf6-dirs
 #Obsoletes:	kf5-%{kfname} < %{version}
+%requires_eq_to Qt6Core Qt6Core-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
