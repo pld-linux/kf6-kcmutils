@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		kcmutils
 
 Summary:	Utilities for KDE System Settings modules
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	a191cd8bf0733c7c3e91568461950d29
+# Source0-md5:	8d458b9bc4e645aed738167176244ca2
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
@@ -104,11 +104,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md
 %ghost %{_libdir}/libKF6KCMUtils.so.6
-%attr(755,root,root) %{_libdir}/libKF6KCMUtils.so.*.*
+%{_libdir}/libKF6KCMUtils.so.*.*
 %ghost %{_libdir}/libKF6KCMUtilsCore.so.6
-%attr(755,root,root) %{_libdir}/libKF6KCMUtilsCore.so.*.*
+%{_libdir}/libKF6KCMUtilsCore.so.*.*
 %attr(755,root,root) %{_bindir}/kcmshell6
-%attr(755,root,root) %{_libdir}/libKF6KCMUtilsQuick.so.*.*
+%{_libdir}/libKF6KCMUtilsQuick.so.*.*
 %ghost %{_libdir}/libKF6KCMUtilsQuick.so.6
 %dir %{_libdir}/qt6/qml/org/kde/kcmutils
 %{_libdir}/qt6/qml/org/kde/kcmutils/AbstractKCM.qml
@@ -125,7 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kcmutils/SimpleKCM.qml
 %{_libdir}/qt6/qml/org/kde/kcmutils/kcmutilsqmlplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kcmutils/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kcmutils/libkcmutilsqmlplugin.so
+%{_libdir}/qt6/qml/org/kde/kcmutils/libkcmutilsqmlplugin.so
 %dir %{_libdir}/qt6/qml/org/kde/kcmutils/private
 %{_libdir}/qt6/qml/org/kde/kcmutils/private/AboutPlugin.qml
 %{_libdir}/qt6/qml/org/kde/kcmutils/private/GridDelegateMenu.qml
@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kcmutils.categories
 %{_libdir}/qt6/qml/org/kde/kcmutils/private/kcmutilsprivateqmlplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kcmutils/private/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kcmutils/private/libkcmutilsprivateqmlplugin.so
+%{_libdir}/qt6/qml/org/kde/kcmutils/private/libkcmutilsprivateqmlplugin.so
 %{_libdir}/qt6/qml/org/kde/kcmutils/private/qmldir
 
 %files devel
