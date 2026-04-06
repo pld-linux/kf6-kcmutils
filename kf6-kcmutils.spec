@@ -8,7 +8,7 @@
 Summary:	Utilities for KDE System Settings modules
 Name:		kf6-%{kfname}
 Version:	6.24.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -36,6 +36,8 @@ BuildRequires:	kf6-kglobalaccel-devel >= %{version}
 BuildRequires:	kf6-kguiaddons-devel >= %{version}
 BuildRequires:	kf6-ki18n-devel >= %{version}
 BuildRequires:	kf6-kiconthemes-devel >= %{version}
+BuildRequires:	kf6-kio-devel >= %{version}
+BuildRequires:	kf6-kirigami-devel >= %{version}
 BuildRequires:	kf6-kitemviews-devel >= %{version}
 BuildRequires:	kf6-kservice-devel >= %{version}
 BuildRequires:	kf6-ktextwidgets-devel >= %{version}
