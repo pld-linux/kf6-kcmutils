@@ -1,8 +1,8 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.24
-%define		qtver		5.15.2
+%define		kdeframever	6.24.0
+%define		qtver		6.8.0
 %define		kfname		kcmutils
 
 Summary:	Utilities for KDE System Settings modules
@@ -17,39 +17,30 @@ URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Qml-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel >= %{qtver}
 BuildRequires:	Qt6Test-devel >= %{qtver}
 BuildRequires:	Qt6Widgets-devel >= %{qtver}
-BuildRequires:	Qt6Xml-devel >= %{qtver}
-BuildRequires:	cmake >= 3.16
-BuildRequires:	gettext-devel
-BuildRequires:	kf6-attica-devel >= %{version}
-BuildRequires:	kf6-extra-cmake-modules >= %{version}
-BuildRequires:	kf6-kauth-devel >= %{version}
-BuildRequires:	kf6-kcodecs-devel >= %{version}
-BuildRequires:	kf6-kcompletion-devel >= %{version}
-BuildRequires:	kf6-kconfig-devel >= %{version}
-BuildRequires:	kf6-kconfigwidgets-devel >= %{version}
-BuildRequires:	kf6-kcoreaddons-devel >= %{version}
-BuildRequires:	kf6-kdbusaddons-devel >= %{version}
-BuildRequires:	kf6-kdeclarative-devel >= %{version}
-BuildRequires:	kf6-kglobalaccel-devel >= %{version}
-BuildRequires:	kf6-kguiaddons-devel >= %{version}
-BuildRequires:	kf6-ki18n-devel >= %{version}
-BuildRequires:	kf6-kiconthemes-devel >= %{version}
-BuildRequires:	kf6-kio-devel >= %{version}
-BuildRequires:	kf6-kirigami-devel >= %{version}
-BuildRequires:	kf6-kitemviews-devel >= %{version}
-BuildRequires:	kf6-kservice-devel >= %{version}
-BuildRequires:	kf6-ktextwidgets-devel >= %{version}
-BuildRequires:	kf6-kwidgetsaddons-devel >= %{version}
-BuildRequires:	kf6-kwindowsystem-devel >= %{version}
-BuildRequires:	kf6-kxmlgui-devel >= %{version}
-BuildRequires:	kf6-sonnet-devel >= %{version}
+BuildRequires:	cmake >= 3.27
+BuildRequires:	gettext-tools
+BuildRequires:	kf6-extra-cmake-modules >= 6.24.0
+BuildRequires:	kf6-kconfig-devel >= %{kdeframever}
+BuildRequires:	kf6-kconfigwidgets-devel >= %{kdeframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kdeframever}
+BuildRequires:	kf6-kguiaddons-devel >= %{kdeframever}
+BuildRequires:	kf6-ki18n-devel >= %{kdeframever}
+BuildRequires:	kf6-kio-devel >= %{kdeframever}
+BuildRequires:	kf6-kirigami >= %{kdeframever}
+BuildRequires:	kf6-kitemviews-devel >= %{kdeframever}
+BuildRequires:	kf6-kservice-devel >= %{kdeframever}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kdeframever}
+BuildRequires:	kf6-kxmlgui-devel >= %{kdeframever}
 BuildRequires:	ninja
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	kf6-dirs
+Requires:	kf6-kirigami >= %{kdeframever}
 #Obsoletes:	kf5-%{kfname} < %{version}
 %requires_eq_to Qt6Core Qt6Core-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,7 +56,9 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	kf6-kconfigwidgets-devel >= %{version}
+Requires:	Qt6Qml-devel >= %{qtver}
+Requires:	kf6-kconfigwidgets-devel >= %{kdeframever}
+Requires:	kf6-kcoreaddons-devel >= %{kdeframever}
 #Obsoletes:	kf5-%{kfname}-devel < %{version}
 
 %description devel
